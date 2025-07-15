@@ -310,6 +310,102 @@ export const categories: Category[] = [
         iconBg: "bg-indigo-500"
       }
     ]
+  },
+  {
+    id: "audio-voice",
+    title: "Audio & Voice Tools",
+    emoji: "🎧",
+    tools: []
+  },
+  {
+    id: "chatbots",
+    title: "AI Chatbots",
+    emoji: "🤖",
+    tools: []
+  },
+  {
+    id: "pdf-documents",
+    title: "PDF & Document Tools",
+    emoji: "📄",
+    tools: []
+  },
+  {
+    id: "marketing-seo",
+    title: "Marketing & SEO Tools",
+    emoji: "📈",
+    tools: []
+  },
+  {
+    id: "social-media",
+    title: "Social Media Tools",
+    emoji: "📱",
+    tools: []
+  },
+  {
+    id: "productivity",
+    title: "Productivity Tools",
+    emoji: "📌",
+    tools: []
+  },
+  {
+    id: "agents-automation",
+    title: "Agents & Automation",
+    emoji: "🛠️",
+    tools: []
+  },
+  {
+    id: "education-learning",
+    title: "Education / Learning",
+    emoji: "🎓",
+    tools: []
+  },
+  {
+    id: "presentation-slides",
+    title: "Presentation & Slides",
+    emoji: "🗂️",
+    tools: []
+  },
+  {
+    id: "resume-career",
+    title: "Resume & Career Tools",
+    emoji: "💼",
+    tools: []
+  },
+  {
+    id: "research-analysis",
+    title: "Research & Analysis",
+    emoji: "🧪",
+    tools: []
+  },
+  {
+    id: "cybersecurity-privacy",
+    title: "Cybersecurity & Privacy",
+    emoji: "🔐",
+    tools: []
+  },
+  {
+    id: "fun-entertainment",
+    title: "Fun / Meme / Entertainment",
+    emoji: "😂",
+    tools: []
+  },
+  {
+    id: "3d-ar-visual",
+    title: "3D, AR & Visual Tools",
+    emoji: "🧊",
+    tools: []
+  },
+  {
+    id: "email-tools",
+    title: "Email Tools",
+    emoji: "📨",
+    tools: []
+  },
+  {
+    id: "finance-investment",
+    title: "Finance & Investment AI",
+    emoji: "📊",
+    tools: []
   }
 ];
 
