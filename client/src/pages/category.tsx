@@ -125,22 +125,24 @@ export default function Category() {
                 </h2>
               )}
               
-              {filteredTools.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {filteredTools.map((tool) => (
-                    <ToolCard key={tool.id} tool={tool} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-xl text-muted-foreground">
-                    {isSearching 
-                      ? "No tools found. Try a different search term."
-                      : "No tools match the selected filters."
-                    }
-                  </p>
-                </div>
-              )}
+ {filteredTools.map((tool, index) => (
+  <>
+    <ToolCard key={tool.id} tool={tool} />
+
+    {/* ✅ Show ad-like card after every 4 tools */}
+    {(index + 1) % 4 === 0 && (
+      <div className="bg-muted p-4 border rounded-lg text-center text-sm text-muted-foreground my-4">
+        <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-9152398635458459"
+          data-ad-slot="4204547238"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+    )}
+  </>
+))}
+
             </div>
           </div>
         </div>

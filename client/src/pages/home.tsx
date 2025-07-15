@@ -80,13 +80,25 @@ export default function Home() {
             </div>
             <p className="text-muted-foreground mb-6">Discover the best AI tools across every category</p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
-              <span>© 2024 Get AI. All rights reserved.</span>
-              <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+              <span>© 2025 Get AI. All rights reserved.</span>
+              <a href="/about" className="mx-2 hover:underline">About</a> |
+              <a href="/contact" className="mx-2 hover:underline">Contact</a> |
+              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>
             </div>
           </div>
         </footer>
       </main>
+
+      {/* ✅ Mobile Sticky Ad Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
+        <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-9152398635458459"
+          data-ad-slot="4204547238"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true">
+        </ins>
+      </div>
     </div>
   );
 }
