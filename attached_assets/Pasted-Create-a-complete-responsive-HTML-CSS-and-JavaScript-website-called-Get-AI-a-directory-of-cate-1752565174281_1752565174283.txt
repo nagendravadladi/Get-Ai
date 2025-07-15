@@ -1,0 +1,66 @@
+Create a complete responsive HTML, CSS, and JavaScript website called “Get AI” — a directory of categorized AI tools with interactive filters and mobile-friendly design.
+
+🧠 Homepage Structure:
+
+1. Fixed top navigation bar with:
+   - Left: “Get AI” logo (styled like a logo with border). Clicking it goes to the homepage.
+   - Center: Search bar to search tools by name or category.
+   - Right: Buttons — “Home,” “Categories” (with hover dropdown), “Theme toggle” (🌗), and “Language switch” (🌍).
+
+2. Below nav, show a centered welcome message:
+   “🧠 Tell us what you need — we’ll help you Get the AI you want!”
+   Subtext below: “All information is curated from public data on the internet.”
+
+3. Below that, display multiple full-width category sections (Netflix-style scrollable rows), each with:
+   - Category title (e.g. “✍️ AI Writing Tools”)
+   - Horizontal scrollable list of responsive tool cards
+
+Each **AI tool card** includes:
+   - Logo/icon (left or top)
+   - Name of the tool
+   - 2–3 line description
+   - ✅ or ❌ emoji for “Currently Working”
+   - 🔥 or 💤 emoji for “Most Used” or “Underrated”
+   - Badge: Free / Limited Free / Paid
+   - “Visit Tool” button (opens in new tab)
+   - Responsive design for mobile/desktop
+   - Clean shadow and hover animation
+
+4. At the end of each category row: “View More” button opens full category page
+
+🧩 Category Page:
+- Title of category at top (e.g. “✍️ AI Writing Tools”)
+- Filters bar (horizontal, sticky on scroll):
+   - ✅ Working
+   - ❌ Not Working
+   - 🔥 Most Used
+   - 💤 Underrated
+   - Free, Limited Free, Paid
+- Below filters: all tools shown in a clean, responsive grid layout
+
+📦 Data Storage:
+- Store AI tools in a JavaScript array (or JSON object) with:
+  {
+    name,
+    description,
+    status, (e.g. “Most Used”, “Not Working”)
+    access, (e.g. “Free”, “Paid”)
+    category,
+    working: true/false,
+    link,
+    icon
+  }
+
+📱 Style Requirements:
+- Use clean, modern fonts (e.g. Poppins or Inter)
+- Dark theme as default, but include toggle logic
+- Make everything mobile responsive
+- Hover animations on cards and buttons
+- Consistent spacing and layout for AdSense-readiness
+- Allow easy scalability: new categories and tools can be added later by manually editing the JS array.
+
+Use placeholder icons and 5–6 sample tools per category (e.g. ChatGPT, Copy.ai, Midjourney). Include 4 categories to start (Writing, Video, Coding, Design). I will add more later manually.
+
+Include all HTML, CSS, and JS files separately inside one Replit project.
+
+Final site should be responsive, organized, fast-loading, and expandable for up to 500+ tools in the future.
