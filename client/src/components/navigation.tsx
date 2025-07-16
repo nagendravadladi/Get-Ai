@@ -96,7 +96,7 @@ export default function Navigation({ onSearch }: NavigationProps) {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 max-h-64 overflow-auto">
+              <DropdownMenuContent align="end" className="w-48 max-h-[300px] overflow-y-auto">
                 {categories.map((category) => (
                   <DropdownMenuItem key={category.id} asChild>
                     <Link href={`/category/${category.id}`} className="w-full cursor-pointer">
