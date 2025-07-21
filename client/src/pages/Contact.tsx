@@ -1,15 +1,26 @@
-// client/src/pages/Contact.tsx
+import React from "react";
+
 export default function Contact() {
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <p className="mb-3">
-        Have suggestions or found an issue? Feel free to contact us!
-      </p>
-      <ul className="list-disc ml-5">
-        <li>Email: <a href="mailto:nagendravadladi@gmail.com" className="text-blue-500">nagendravadladi@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/nagendravadladi" className="text-blue-500">github.com/nagendravadladi</a></li>
-      </ul>
+    <div className="min-h-screen bg-background text-foreground py-16 px-4">
+      <div className="max-w-3xl mx-auto text-center">
+        <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
+        <p className="text-lg mb-4">
+          Have feedback, suggestions, or just want to say hi? I’d love to hear from you.
+        </p>
+        <p className="text-lg mb-4">
+          Whether it's a new AI tool recommendation, bug report, or partnership idea — your message matters.
+        </p>
+        <p className="text-lg mb-4">
+          Please email me directly at:
+        </p>
+        <p className="text-lg font-semibold text-primary mb-8">
+          📩 <a href="mailto:nagendravadladi@gmail.com" className="hover:underline">nagendravadladi@gmail.com</a>
+        </p>
+        <p className="text-sm text-muted-foreground">
+          I usually respond within 24–48 hours. Thanks for helping make Get AI even better!
+        </p>
+      </div>
     </div>
   );
 }

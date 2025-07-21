@@ -10,6 +10,9 @@ import NotFound from "@/pages/not-found";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import AIForStudents from "@/pages/blog/AIForStudents";
+import AIProductivity from "@/pages/blog/AIProductivity";
+
 
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/blog/ai-for-students" component={AIForStudents} />
+      <Route path="/blog/ai-in-productivity" component={AIProductivity} />
+
 
       <Route component={NotFound} />
     </Switch>

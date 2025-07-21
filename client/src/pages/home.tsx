@@ -30,12 +30,13 @@ export default function Home() {
             {/* Welcome Section */}
             <section className="py-16 px-4 text-center">
               <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  🧠 Tell us what you need —<br />We'll help you Get AI you want.
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8">
-                  Explore thousands of tools across every category — from content to code ai creative.
-                </p>
+         <h1 className="text-4xl md:text-5xl font-bold mb-4">
+  🧠 Discover Smarter AI —<br />Find the Right Tools Instantly.
+</h1>
+<p className="text-xl text-muted-foreground mb-8">
+  Get AI is your one-stop hub to explore, compare, and choose the best AI tools from every category — writing, coding, design, video, and more. Save time, boost productivity, and stay ahead.
+</p>
+
               </div>
             </section>
 
@@ -76,7 +77,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-2xl">🧠</span>
-              <span className="text-xl font-bold">Get AI</span>
+              <span className="text-xl font-bold">Get AI   ✅ Working”, “🔥 Popular(Working)”, “💤 Underrated(Not_Working)”...</span>
             </div>
             <p className="text-muted-foreground mb-6">Discover the best AI tools across every category</p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
