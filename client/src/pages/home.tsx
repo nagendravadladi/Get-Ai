@@ -77,7 +77,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-2xl">🧠</span>
-              <span className="text-xl font-bold">Get AI   ✅ Working”, “🔥 Popular(Working)”, “💤 Underrated(Not_Working)”...</span>
+              <span className="text-xl font-bold">Get AI  <br /> ✅ Working  🔥 Popular(Working)  💤 Underrated(Not_Working)”...</span>
             </div>
             <p className="text-muted-foreground mb-6">Discover the best AI tools across every category</p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
@@ -85,6 +85,9 @@ export default function Home() {
               <a href="/about" className="mx-2 hover:underline">About</a> |
               <a href="/contact" className="mx-2 hover:underline">Contact</a> |
               <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>
+              <a href="/blog/ai-for-students" className="mx-2 hover:underline">AI for Students</a> |
+<a href="/blog/ai-in-productivity" className="mx-2 hover:underline">AI in Productivity</a>
+
             </div>
           </div>
         </footer>
