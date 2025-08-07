@@ -7,8 +7,18 @@ import Navigation from "@/components/navigation";
 import ToolCard from "@/components/tool-card";
 import { getCategoryById, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
+import AdSlot from "@/components/AdSlot";
+import AdPopup from "@/components/AdPopup"; // ✅ Optional popup ad
 
-type FilterType = "all" | "working" | "not-working" | "most-used" | "underrated" | "free" | "limited-free" | "paid";
+type FilterType =
+  | "all"
+  | "working"
+  | "not-working"
+  | "most-used"
+  | "underrated"
+  | "free"
+  | "limited-free"
+  | "paid";
 
 export default function Category() {
   const [match, params] = useRoute("/category/:categoryId");
@@ -34,7 +44,7 @@ export default function Category() {
     if (isSearching) return searchResults;
     if (!category) return [];
 
-    return category.tools.filter(tool => {
+    return category.tools.filter((tool) => {
       switch (activeFilter) {
         case "working":
           return tool.working;
@@ -82,8 +92,9 @@ export default function Category() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <AdPopup /> {/* ✅ Optional popup on page load */}
       <Navigation onSearch={handleSearch} />
-      
+
       <main className="pt-16">
         <div className="px-4 py-8">
           <div className="max-w-7xl mx-auto">
@@ -99,8 +110,12 @@ export default function Category() {
               </Button>
             </div>
 
+            {/* Top Ad */}
+            <div className="my-6">
+              <AdSlot slot="4204547238" />
+            </div>
+
             {!isSearching && (
-              /* Filters Bar */
               <div className="sticky top-20 bg-background/95 backdrop-blur-md border border-border rounded-lg p-4 mb-8 z-40">
                 <div className="flex flex-wrap gap-3">
                   {filterButtons.map((filter) => (
@@ -124,29 +139,35 @@ export default function Category() {
                   Search Results ({filteredTools.length} tools found)
                 </h2>
               )}
-              
- {filteredTools.map((tool, index) => (
-  <>
-    <ToolCard key={tool.id} tool={tool} />
 
-    {/* ✅ Show ad-like card after every 4 tools */}
-    {(index + 1) % 4 === 0 && (
-      <div className="bg-muted p-4 border rounded-lg text-center text-sm text-muted-foreground my-4">
-        <ins className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-9152398635458459"
-          data-ad-slot="4204547238"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    )}
-  </>
-))}
+              {filteredTools.map((tool, index) => (
+                <div key={tool.id}>
+                  <ToolCard tool={tool} />
 
+                  {/* Show ad after every 4 tools */}
+                  {(index + 1) % 4 === 0 && (
+                    <div className="my-6">
+                      <AdSlot slot="4204547238" />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </main>
+
+      {/* Sticky Mobile Ad */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-9152398635458459"
+          data-ad-slot="4204547238"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
     </div>
   );
 }

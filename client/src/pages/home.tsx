@@ -4,6 +4,8 @@ import CategorySection from "@/components/category-section";
 import ToolCard from "@/components/tool-card";
 import { categories, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
+import AdSlot from "@/components/AdSlot";
+import AdPopup from "@/components/AdPopup";
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<AITool[]>([]);
@@ -22,6 +24,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <AdPopup /> {/* 👈 Popup Ad on Load */}
       <Navigation onSearch={handleSearch} />
       
       <main className="pt-16">
@@ -30,20 +33,31 @@ export default function Home() {
             {/* Welcome Section */}
             <section className="py-16 px-4 text-center">
               <div className="max-w-4xl mx-auto">
-         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-  🧠 Discover Smarter AI —<br />Find the Right Tools Instantly.
-</h1>
-<p className="text-xl text-muted-foreground mb-8">
-  Get AI is your one-stop hub to explore, compare, and choose the best AI tools from every category — writing, coding, design, video, and more. Save time, boost productivity, and stay ahead.
-</p>
-
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  🧠 Discover Smarter AI —<br />Find the Right Tools Instantly.
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Get AI is your one-stop hub to explore, compare, and choose the best AI tools from every category — writing, coding, design, video, and more. Save time, boost productivity, and stay ahead.
+                </p>
               </div>
             </section>
 
-            {/* Category Sections */}
+            {/* Ad after welcome section */}
+            <div className="my-8 px-4 max-w-4xl mx-auto">
+              <AdSlot slot="4204547238" />
+            </div>
+
+            {/* Category Sections with ads after every 2 */}
             <div className="px-4 space-y-12 max-w-7xl mx-auto">
-              {categories.map((category) => (
-                <CategorySection key={category.id} category={category} />
+              {categories.map((category, index) => (
+                <div key={category.id}>
+                  <CategorySection category={category} />
+                  {index % 2 === 1 && (
+                    <div className="my-8">
+                      <AdSlot slot="4204547238" />
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </>
@@ -54,7 +68,6 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold mb-8">
                 Search Results ({searchResults.length} tools found)
               </h2>
-              
               {searchResults.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {searchResults.map((tool) => (
@@ -72,22 +85,30 @@ export default function Home() {
           </section>
         )}
 
+        {/* Ad before footer */}
+        <div className="my-12 px-4 max-w-4xl mx-auto">
+          <AdSlot slot="4204547238" />
+        </div>
+
         {/* Footer */}
         <footer className="mt-24 py-12 px-4 border-t border-border">
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-2xl">🧠</span>
-              <span className="text-xl font-bold">Get AI  <br /> ✅ Working  🔥 Popular(Working)  💤 Underrated(Not_Working)”...</span>
+              <span className="text-xl font-bold">
+                Get AI <br /> ✅ Working 🔥 Popular(Working) 💤 Underrated(Not_Working)
+              </span>
             </div>
-            <p className="text-muted-foreground mb-6">Discover the best AI tools across every category</p>
+            <p className="text-muted-foreground mb-6">
+              Discover the best AI tools across every category
+            </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
               <span>© 2025 Get AI. All rights reserved.</span>
               <a href="/about" className="mx-2 hover:underline">About</a> |
               <a href="/contact" className="mx-2 hover:underline">Contact</a> |
-              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>
+              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a> |
               <a href="/blog/ai-for-students" className="mx-2 hover:underline">AI for Students</a> |
-<a href="/blog/ai-in-productivity" className="mx-2 hover:underline">AI in Productivity</a>
-
+              <a href="/blog/ai-in-productivity" className="mx-2 hover:underline">AI in Productivity</a>
             </div>
           </div>
         </footer>
