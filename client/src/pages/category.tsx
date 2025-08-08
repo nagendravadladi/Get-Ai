@@ -110,7 +110,7 @@ export default function Category() {
 
             {/* Top Ad */}
             <div className="my-6">
-              <AdSlot slot="4204547238" />
+              <AdSlot slot="1230440086" />
             </div>
 
             {!isSearching && (
@@ -145,7 +145,7 @@ export default function Category() {
                   {/* Show ad after every 4 tools */}
                   {(index + 1) % 4 === 0 && (
                     <div className="my-6">
-                      <AdSlot slot="4204547238" />
+                      <AdSlot slot="1230440086" />
                     </div>
                   )}
                 </div>
@@ -161,7 +161,7 @@ export default function Category() {
           className="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-9152398635458459"
-          data-ad-slot="4204547238"
+          data-ad-slot="1230440086"
           data-ad-format="horizontal"
           data-full-width-responsive="true"
         ></ins>

@@ -19,7 +19,7 @@ const AdSlot = ({
   responsive = true,
   style = { display: "block" },
 }: AdSlotProps) => {
-  const adRef = useRef<HTMLElement | null>(null); // ✅ Safe & compatible
+  const adRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,7 +33,7 @@ const AdSlot = ({
         }
       },
       {
-        rootMargin: "200px",
+        rootMargin: "500px",
       }
     );
 
@@ -50,6 +50,7 @@ const AdSlot = ({
 
   return (
     <ins
+      key={slot} // ✅ force re-render
       ref={adRef}
       className="adsbygoogle"
       style={style}
