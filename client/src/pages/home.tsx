@@ -5,7 +5,7 @@ import ToolCard from "@/components/tool-card";
 import { categories, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
 import AdSlot from "@/components/AdSlot";
-import AdPopup from "@/components/AdPopup";
+
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<AITool[]>([]);
@@ -24,7 +24,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <AdPopup /> {/* 👈 Popup Ad on Load */}
       <Navigation onSearch={handleSearch} />
       
       <main className="pt-16">
