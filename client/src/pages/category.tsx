@@ -8,7 +8,6 @@ import ToolCard from "@/components/tool-card";
 import { getCategoryById, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
 import AdSlot from "@/components/AdSlot";
-import AdPopup from "@/components/AdPopup"; // ✅ Optional popup ad
 
 type FilterType =
   | "all"
@@ -92,7 +91,6 @@ export default function Category() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <AdPopup /> {/* ✅ Optional popup on page load */}
       <Navigation onSearch={handleSearch} />
 
       <main className="pt-16">
