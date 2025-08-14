@@ -5,7 +5,7 @@ import ToolCard from "@/components/tool-card";
 import { categories, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
 import AdSlot from "@/components/AdSlot";
-
+import SEO from "@/components/SEO";
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<AITool[]>([]);
@@ -24,40 +24,108 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* ✅ Enhanced SEO Meta Tags with High CPC Keywords */}
+      <SEO
+        title="Get AI – Best AI Tools for Writing, Finance, Law, Marketing, Real Estate & More"
+        description="Explore top AI tools for finance, healthcare, marketing, law, real estate, coding, writing, and more. Maximize AdSense CPC with high-value AI categories."
+        keywords={[
+          "AI tools",
+          "AI writing tools",
+          "AI coding tools",
+          "AI video tools",
+          "AI finance software",
+          "AI bookkeeping and accounting software",
+          "AI fraud detection software",
+          "AI contract review for law firms",
+          "AI insurance claims automation software",
+          "AI customer support software",
+          "AI CRM tools for B2B lead scoring",
+          "AI sales email writing tools",
+          "AI cloud cost optimization tools",
+          "AI log analysis & monitoring tools",
+          "AI cybersecurity tools for SMBs",
+          "AI vulnerability scanning tools",
+          "AI SEO tools",
+          "AI keyword research tools",
+          "AI content optimization tools",
+          "AI PPC campaign management tools",
+          "AI marketing automation platforms",
+          "AI copywriting tools for landing pages",
+          "AI A/B testing & CRO tools",
+          "AI video editors for agencies",
+          "AI ad creative generators",
+          "AI image upscalers for ecommerce",
+          "AI meeting note & transcription tools",
+          "AI presentation makers",
+          "AI real estate lead generation tools",
+          "AI property valuation tools",
+          "AI listing automation tools",
+          "AI tools for legal research",
+          "AI drafting tools for law firms",
+          "AI tools for HR & recruiting",
+          "AI tools for healthcare documentation",
+          "AI tools for education course creation",
+          "AI mortgage calculator USA",
+          "AI contract review UK",
+          "best AI real estate lead generation tools",
+          "top AI contract review software"
+        ]}
+      />
+
       <Navigation onSearch={handleSearch} />
-      
+
       <main className="pt-16">
         {!isSearching ? (
           <>
-            {/* Welcome Section */}
+            {/* Welcome Section with Internal Links */}
             <section className="py-16 px-4 text-center">
               <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  🧠 Discover Smarter AI —<br />Find the Right Tools Instantly.
+                  🧠 Discover Smarter AI —<br />Find High-Value AI Tools Instantly.
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Get AI is your one-stop hub to explore, compare, and choose the best AI tools from every category — writing, coding, design, video, and more. Save time, boost productivity, and stay ahead.
+                  Explore AI tools for{" "}
+                  <a href="/categories/finance" className="underline">finance automation</a>,{" "}
+                  <a href="/categories/healthcare" className="underline">healthcare AI</a>,{" "}
+                  <a href="/categories/marketing" className="underline">AI marketing tools</a>,{" "}
+                  <a href="/categories/law" className="underline">AI for law firms</a>,{" "}
+                  and <a href="/categories/real-estate" className="underline">AI real estate tools</a>. 
+                  Get AI is your one-stop hub to explore, compare, and choose the best AI solutions while maximizing your AdSense revenue.
                 </p>
               </div>
             </section>
 
-            {/* Ad after welcome section */}
+            {/* 📌 Ad after welcome section */}
             <div className="my-8 px-4 max-w-4xl mx-auto">
               <AdSlot slot="4204547238" />
             </div>
 
-            {/* Category Sections with ads after every 2 */}
+            {/* Categories with Ads after every 2 */}
             <div className="px-4 space-y-12 max-w-7xl mx-auto">
-              {categories.map((category, index) => (
-                <div key={category.id}>
-                  <CategorySection category={category} />
-                  {index % 2 === 1 && (
-                    <div className="my-8">
-                      <AdSlot slot="4204547238" />
-                    </div>
-                  )}
-                </div>
-              ))}
+              {categories.map((category, index) => {
+                const updatedCategory = {
+                  ...category,
+                  name:
+                    category.name === "Finance"
+                      ? "Finance & Investment AI Tools"
+                      : category.name === "Law"
+                      ? "Legal AI & Contract Review Tools"
+                      : category.name === "Real Estate"
+                      ? "Real Estate AI & Property Valuation Tools"
+                      : category.name
+                };
+
+                return (
+                  <div key={updatedCategory.id}>
+                    <CategorySection category={updatedCategory} />
+                    {index % 2 === 1 && (
+                      <div className="my-8">
+                        <AdSlot slot="4204547238" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </>
         ) : (
@@ -84,7 +152,7 @@ export default function Home() {
           </section>
         )}
 
-        {/* Ad before footer */}
+        {/* 📌 Ad before footer */}
         <div className="my-12 px-4 max-w-4xl mx-auto">
           <AdSlot slot="4204547238" />
         </div>
@@ -95,11 +163,11 @@ export default function Home() {
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-2xl">🧠</span>
               <span className="text-xl font-bold">
-                Get AI <br /> ✅ Working 🔥 Popular(Working) 💤 Underrated(Not_Working)
+                Get AI <br /> ✅ Working 🔥 Popular 💤 Underrated
               </span>
             </div>
             <p className="text-muted-foreground mb-6">
-              Discover the best AI tools across every category
+              Discover the best AI tools across every category — finance AI, healthcare AI, AI trading bots, and more.
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
               <span>© 2025 Get AI. All rights reserved.</span>
@@ -115,13 +183,14 @@ export default function Home() {
 
       {/* ✅ Mobile Sticky Ad Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
-        <ins className="adsbygoogle"
+        <ins
+          className="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-9152398635458459"
           data-ad-slot="4204547238"
           data-ad-format="horizontal"
-          data-full-width-responsive="true">
-        </ins>
+          data-full-width-responsive="true"
+        />
       </div>
     </div>
   );

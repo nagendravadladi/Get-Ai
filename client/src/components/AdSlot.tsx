@@ -26,9 +26,12 @@ const AdSlot = ({
       (entries) => {
         if (entries[0].isIntersecting && adRef.current) {
           try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            // Add slight delay to reduce push errors
+            setTimeout(() => {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            }, 100);
           } catch (e) {
-            console.error("Adsense error", e);
+            console.error(`Adsense error in slot ${slot}:`, e);
           }
         }
       },
@@ -46,11 +49,11 @@ const AdSlot = ({
         observer.unobserve(adRef.current);
       }
     };
-  }, []);
+  }, [slot]);
 
   return (
     <ins
-      key={slot} // ✅ force re-render
+      key={slot} // force re-render if slot changes
       ref={adRef}
       className="adsbygoogle"
       style={style}

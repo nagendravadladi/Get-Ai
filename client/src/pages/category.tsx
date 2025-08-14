@@ -1,13 +1,13 @@
 import { useState, useMemo } from "react";
-import { useRoute } from "wouter";
+import { useRoute, Link } from "wouter";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
 import Navigation from "@/components/navigation";
 import ToolCard from "@/components/tool-card";
 import { getCategoryById, searchTools } from "@/data/ai-tools";
 import type { AITool } from "@/data/ai-tools";
 import AdSlot from "@/components/AdSlot";
+import SEO from "@/components/SEO";
 
 type FilterType =
   | "all"
@@ -39,11 +39,25 @@ export default function Category() {
     }
   };
 
+  // ✅ Dynamically rename categories for CPC targeting
+  const updatedCategory = category
+    ? {
+        ...category,
+        title:
+          category.title === "Finance"
+            ? "Finance & Investment AI Tools"
+            : category.title === "Law"
+            ? "Legal AI & Contract Review Tools"
+            : category.title === "Real Estate"
+            ? "Real Estate AI & Property Valuation Tools"
+            : category.title,
+      }
+    : null;
+
   const filteredTools = useMemo(() => {
     if (isSearching) return searchResults;
-    if (!category) return [];
-
-    return category.tools.filter((tool) => {
+    const tools = updatedCategory?.tools ?? [];
+    return tools.filter((tool) => {
       switch (activeFilter) {
         case "working":
           return tool.working;
@@ -63,7 +77,7 @@ export default function Category() {
           return true;
       }
     });
-  }, [category, activeFilter, isSearching, searchResults]);
+  }, [updatedCategory, activeFilter, isSearching, searchResults]);
 
   const filterButtons: { key: FilterType; label: string }[] = [
     { key: "all", label: "All Tools" },
@@ -76,9 +90,14 @@ export default function Category() {
     { key: "paid", label: "Paid" },
   ];
 
-  if (!match || !category) {
+  if (!match || !updatedCategory) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+        <SEO
+          title="Category Not Found – Get AI Tools"
+          description="Sorry, the category you are looking for does not exist."
+          keywords={["AI tools", "categories", "not found"]}
+        />
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Category Not Found</h1>
           <Link href="/" className="text-primary hover:underline">
@@ -91,6 +110,28 @@ export default function Category() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* ✅ Enhanced SEO for Category */}
+      <SEO
+        title={`${updatedCategory.title} – Best AI Tools & High CPC Keywords`}
+        description={`Explore the best AI tools in the ${updatedCategory.title} category. Discover top tools for finance, law, real estate, marketing, and more while maximizing AdSense CPC.`}
+        keywords={[
+          `${updatedCategory.title} AI tools`,
+          "AI software",
+          "best AI tools",
+          updatedCategory.title,
+          "AI automation tools",
+          "AI finance software",
+          "AI bookkeeping software",
+          "AI contract review tools",
+          "AI legal research tools",
+          "AI real estate lead generation",
+          "AI marketing automation platforms",
+          "AI cybersecurity solutions",
+          "AI CRM lead scoring",
+          "AI customer support software",
+        ]}
+      />
+
       <Navigation onSearch={handleSearch} />
 
       <main className="pt-16">
@@ -99,7 +140,7 @@ export default function Category() {
             {/* Category Header */}
             <div className="flex items-center justify-between mb-8">
               <h1 className="text-3xl md:text-4xl font-bold">
-                {category.emoji} {category.title}
+                {updatedCategory.emoji} {updatedCategory.title}
               </h1>
               <Button variant="ghost" size="icon" asChild>
                 <Link href="/">
@@ -113,6 +154,7 @@ export default function Category() {
               <AdSlot slot="1230440086" />
             </div>
 
+            {/* Filters */}
             {!isSearching && (
               <div className="sticky top-20 bg-background/95 backdrop-blur-md border border-border rounded-lg p-4 mb-8 z-40">
                 <div className="flex flex-wrap gap-3">
@@ -130,7 +172,7 @@ export default function Category() {
               </div>
             )}
 
-            {/* Results Section */}
+            {/* Tools List */}
             <div>
               {isSearching && (
                 <h2 className="text-xl font-semibold mb-6">
@@ -141,8 +183,6 @@ export default function Category() {
               {filteredTools.map((tool, index) => (
                 <div key={tool.id}>
                   <ToolCard tool={tool} />
-
-                  {/* Show ad after every 4 tools */}
                   {(index + 1) % 4 === 0 && (
                     <div className="my-6">
                       <AdSlot slot="1230440086" />
