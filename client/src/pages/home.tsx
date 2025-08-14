@@ -24,51 +24,20 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* ✅ Enhanced SEO Meta Tags with High CPC Keywords */}
+      {/* ✅ SEO Meta Tags */}
       <SEO
         title="Get AI – Best AI Tools for Writing, Finance, Law, Marketing, Real Estate & More"
-        description="Explore top AI tools for finance, healthcare, marketing, law, real estate, coding, writing, and more. Maximize AdSense CPC with high-value AI categories."
+        description="Discover top AI tools for finance, healthcare, marketing, law, real estate, coding, writing, and more."
         keywords={[
           "AI tools",
           "AI writing tools",
           "AI coding tools",
-          "AI video tools",
           "AI finance software",
-          "AI bookkeeping and accounting software",
-          "AI fraud detection software",
-          "AI contract review for law firms",
-          "AI insurance claims automation software",
-          "AI customer support software",
-          "AI CRM tools for B2B lead scoring",
-          "AI sales email writing tools",
-          "AI cloud cost optimization tools",
-          "AI log analysis & monitoring tools",
-          "AI cybersecurity tools for SMBs",
-          "AI vulnerability scanning tools",
+          "AI marketing automation",
+          "AI real estate tools",
+          "AI contract review",
           "AI SEO tools",
-          "AI keyword research tools",
-          "AI content optimization tools",
-          "AI PPC campaign management tools",
-          "AI marketing automation platforms",
-          "AI copywriting tools for landing pages",
-          "AI A/B testing & CRO tools",
-          "AI video editors for agencies",
-          "AI ad creative generators",
-          "AI image upscalers for ecommerce",
-          "AI meeting note & transcription tools",
-          "AI presentation makers",
-          "AI real estate lead generation tools",
-          "AI property valuation tools",
-          "AI listing automation tools",
-          "AI tools for legal research",
-          "AI drafting tools for law firms",
-          "AI tools for HR & recruiting",
-          "AI tools for healthcare documentation",
-          "AI tools for education course creation",
-          "AI mortgage calculator USA",
-          "AI contract review UK",
-          "best AI real estate lead generation tools",
-          "top AI contract review software"
+          "AI content optimization"
         ]}
       />
 
@@ -77,20 +46,15 @@ export default function Home() {
       <main className="pt-16">
         {!isSearching ? (
           <>
-            {/* Welcome Section with Internal Links */}
+            {/* Welcome Section */}
             <section className="py-16 px-4 text-center">
               <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  🧠 Discover Smarter AI —<br />Find High-Value AI Tools Instantly.
+                  🧠 Discover Smarter AI —<br />Find the Best AI Tools Instantly
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Explore AI tools for{" "}
-                  <a href="/categories/finance" className="underline">finance automation</a>,{" "}
-                  <a href="/categories/healthcare" className="underline">healthcare AI</a>,{" "}
-                  <a href="/categories/marketing" className="underline">AI marketing tools</a>,{" "}
-                  <a href="/categories/law" className="underline">AI for law firms</a>,{" "}
-                  and <a href="/categories/real-estate" className="underline">AI real estate tools</a>. 
-                  Get AI is your one-stop hub to explore, compare, and choose the best AI solutions while maximizing your AdSense revenue.
+                  Browse trusted AI tools for finance, healthcare, marketing, law, real estate, and more. 
+                  Get AI helps you explore, compare, and choose the right AI solutions for your needs.
                 </p>
               </div>
             </section>
@@ -162,20 +126,16 @@ export default function Home() {
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-2xl">🧠</span>
-              <span className="text-xl font-bold">
-                Get AI <br /> ✅ Working 🔥 Popular 💤 Underrated
-              </span>
+              <span className="text-xl font-bold">Get AI</span>
             </div>
             <p className="text-muted-foreground mb-6">
-              Discover the best AI tools across every category — finance AI, healthcare AI, AI trading bots, and more.
+              Discover the best AI tools for every industry — finance, healthcare, law, marketing, and more.
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
               <span>© 2025 Get AI. All rights reserved.</span>
               <a href="/about" className="mx-2 hover:underline">About</a> |
               <a href="/contact" className="mx-2 hover:underline">Contact</a> |
-              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a> |
-              <a href="/blog/ai-for-students" className="mx-2 hover:underline">AI for Students</a> |
-              <a href="/blog/ai-in-productivity" className="mx-2 hover:underline">AI in Productivity</a>
+              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>
             </div>
           </div>
         </footer>
