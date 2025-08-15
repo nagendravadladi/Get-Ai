@@ -21,17 +21,18 @@ export default function CategorySection({ category }: CategorySectionProps) {
           </Link>
         </Button>
       </div>
-      
-      <div className="overflow-x-auto pb-4">
-        <div className="flex space-x-6 min-w-max">
-          {category.tools.slice(0, 5).map((tool) => (
-            <ToolCard 
-              key={tool.id} 
-              tool={tool} 
-              className="w-80 flex-shrink-0"
-            />
-          ))}
-        </div>
+
+      {/* ⚠️ This div replaces the old carousel container ⚠️ */}
+      {/* It now uses a responsive grid layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {category.tools.slice(0, 5).map((tool) => (
+          <ToolCard 
+            key={tool.id} 
+            tool={tool} 
+            // The card will be full-width by default in the grid
+            className="" 
+          />
+        ))}
       </div>
     </section>
   );

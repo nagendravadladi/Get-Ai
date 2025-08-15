@@ -60,9 +60,9 @@ export default function Home() {
             </section>
 
             {/* 📌 Ad after welcome section */}
-            <div className="my-8 px-4 max-w-4xl mx-auto">
-              <AdSlot slot="4204547238" />
-            </div>
+           <div className="my-8 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+  <AdSlot slot="4204547238" />
+</div>
 
             {/* Categories with Ads after every 2 */}
             <div className="px-4 space-y-12 max-w-7xl mx-auto">
@@ -83,7 +83,7 @@ export default function Home() {
                   <div key={updatedCategory.id}>
                     <CategorySection category={updatedCategory} />
                     {index % 2 === 1 && (
-                      <div className="my-8">
+                     <div className="my-8 px-4 mx-auto" style={{ maxWidth: '728px' }}>
                         <AdSlot slot="4204547238" />
                       </div>
                     )}
@@ -117,9 +117,9 @@ export default function Home() {
         )}
 
         {/* 📌 Ad before footer */}
-        <div className="my-12 px-4 max-w-4xl mx-auto">
-          <AdSlot slot="4204547238" />
-        </div>
+       <div className="my-12 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+  <AdSlot slot="4204547238" />
+</div>
 
         {/* Footer */}
         <footer className="mt-24 py-12 px-4 border-t border-border">
