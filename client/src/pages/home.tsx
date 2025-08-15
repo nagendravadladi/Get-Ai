@@ -60,9 +60,9 @@ export default function Home() {
             </section>
 
             {/* 📌 Ad after welcome section */}
-            <div className="my-8 px-4 max-w-4xl mx-auto">
-              <AdSlot slot="4204547238" />
-            </div>
+           <div className="my-8 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+  <AdSlot slot="4204547238" />
+</div>
 
             {/* Categories with Ads after every 2 */}
             <div className="px-4 space-y-12 max-w-7xl mx-auto">
@@ -117,25 +117,25 @@ export default function Home() {
         )}
 
         {/* 📌 Ad before footer */}
-        <div className="my-12 px-4 max-w-4xl mx-auto">
-          <AdSlot slot="4204547238" />
-        </div>
+       <div className="my-12 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+  <AdSlot slot="4204547238" />
+</div>
 
         {/* Footer */}
         <footer className="mt-24 py-12 px-4 border-t border-border">
           <div className="max-w-7xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <span className="text-2xl">🧠</span>
-              <span className="text-xl font-bold">Get AI</span>
-            </div>
-            <p className="text-muted-foreground mb-6">
-              Discover the best AI tools for every industry — finance, healthcare, law, marketing, and more.
-            </p>
-            <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
-              <span>© 2025 Get AI. All rights reserved.</span>
-              <a href="/about" className="mx-2 hover:underline">About</a> |
-              <a href="/contact" className="mx-2 hover:underline">Contact</a> |
-              <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a>
+             <span className="text-2xl">🧠</span>
+              <span className="text-xl font-bold"> Get AI <br /> ✅ Working 🔥 Popular 💤 Underrated </span>
+               </div>
+                <p className="text-muted-foreground mb-6"> Discover the best AI tools across every category — finance AI, healthcare AI, AI trading bots, and more. </p>
+                 <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground"> 
+                  <span>© 2025 Get AI. All rights reserved.</span> 
+                  <a href="/about" className="mx-2 hover:underline">About</a> |
+                   <a href="/contact" className="mx-2 hover:underline">Contact</a> |
+                    <a href="/privacy-policy" className="mx-2 hover:underline">Privacy Policy</a> |
+                     <a href="/blog/ai-for-students" className="mx-2 hover:underline">AI for Students</a> |
+                      <a href="/blog/ai-in-productivity" className="mx-2 hover:underline">AI in Productivity</a>
             </div>
           </div>
         </footer>

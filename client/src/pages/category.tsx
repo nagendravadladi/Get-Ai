@@ -133,6 +133,10 @@ export default function Category() {
       />
 
       <Navigation onSearch={handleSearch} />
+         {/* Top Ad */}
+            <div className="my-6">
+              <AdSlot slot="1230440086" />
+            </div>
 
       <main className="pt-16">
         <div className="px-4 py-8">
@@ -149,10 +153,7 @@ export default function Category() {
               </Button>
             </div>
 
-            {/* Top Ad */}
-            <div className="my-6">
-              <AdSlot slot="1230440086" />
-            </div>
+         
 
             {/* Filters */}
             {!isSearching && (
@@ -172,24 +173,21 @@ export default function Category() {
               </div>
             )}
 
-            {/* Tools List */}
+            {/* Tools List - This is the section to update */}
             <div>
               {isSearching && (
                 <h2 className="text-xl font-semibold mb-6">
                   Search Results ({filteredTools.length} tools found)
                 </h2>
               )}
-
-              {filteredTools.map((tool, index) => (
-                <div key={tool.id}>
-                  <ToolCard tool={tool} />
-                  {(index + 1) % 4 === 0 && (
-                    <div className="my-6">
-                      <AdSlot slot="1230440086" />
-                    </div>
-                  )}
-                </div>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {filteredTools.map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} />
+                ))}
+              </div>
+              {filteredTools.length === 0 && (
+                <p className="text-center text-muted-foreground mt-8">No tools found for this category or search.</p>
+              )}
             </div>
           </div>
         </div>
