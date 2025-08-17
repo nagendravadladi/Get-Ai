@@ -134,9 +134,9 @@ export default function Category() {
 
       <Navigation onSearch={handleSearch} />
          {/* Top Ad */}
-            <div className="my-6">
+            {/* <div className="my-6">
               <AdSlot slot="1230440086" />
-            </div>
+            </div> */}
 
       <main className="pt-16">
         <div className="px-4 py-8">
@@ -194,7 +194,7 @@ export default function Category() {
       </main>
 
       {/* Sticky Mobile Ad */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
+      {/* <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
         <ins
           className="adsbygoogle"
           style={{ display: "block" }}
@@ -203,7 +203,7 @@ export default function Category() {
           data-ad-format="horizontal"
           data-full-width-responsive="true"
         ></ins>
-      </div>
+      </div> */}
     </div>
   );
 }
