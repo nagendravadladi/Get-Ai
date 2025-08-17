@@ -65,32 +65,32 @@ export default function Home() {
 </div>
 
             {/* Categories with Ads after every 2 */}
-            {/* <div className="px-4 space-y-12 max-w-7xl mx-auto">
+             <div className="px-4 space-y-12 max-w-7xl mx-auto">
               {categories.map((category, index) => {
                 const updatedCategory = {
                   ...category,
-                  name:
-                    category.name === "Finance"
+                  title:
+                    category.title === "Finance"
                       ? "Finance & Investment AI Tools"
-                      : category.name === "Law"
+                      : category.title === "Law"
                       ? "Legal AI & Contract Review Tools"
-                      : category.name === "Real Estate"
+                      : category.title === "Real Estate"
                       ? "Real Estate AI & Property Valuation Tools"
-                      : category.name
+                      : category.title
                 };
 
                 return (
                   <div key={updatedCategory.id}>
                     <CategorySection category={updatedCategory} />
-                    {index % 2 === 1 && (
+                    {/* {index % 2 === 1 && (
                       <div className="my-8">
                         <AdSlot slot="4204547238" />
                       </div>
-                    )}
+                    )} */}
                   </div>
                 );
               })}
-            </div> */}
+            </div> 
           </>
         ) : (
           /* Search Results */
