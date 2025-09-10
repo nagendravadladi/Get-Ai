@@ -60,9 +60,9 @@ export default function Home() {
             </section>
 
             {/* 📌 Ad after welcome section */}
-           {/* <div className="my-8 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+           <div className="my-8 px-4 mx-auto" style={{ maxWidth: '728px' }}>
   <AdSlot slot="4204547238" />
-</div> */}
+</div>
 
             {/* Categories with Ads after every 2 */}
              <div className="px-4 space-y-12 max-w-7xl mx-auto">
@@ -82,11 +82,11 @@ export default function Home() {
                 return (
                   <div key={updatedCategory.id}>
                     <CategorySection category={updatedCategory} />
-                    {/* {index % 2 === 1 && (
+                    {index % 2 === 1 && (
                       <div className="my-8">
                         <AdSlot slot="4204547238" />
                       </div>
-                    )} */}
+                    )}
                   </div>
                 );
               })}
@@ -117,9 +117,9 @@ export default function Home() {
         )}
 
         {/* 📌 Ad before footer */}
-       {/* <div className="my-12 px-4 mx-auto" style={{ maxWidth: '728px' }}>
+       <div className="my-12 px-4 mx-auto" style={{ maxWidth: '728px' }}>
   <AdSlot slot="4204547238" />
-</div> */}
+</div>
 
         {/* Footer */}
         <footer className="mt-24 py-12 px-4 border-t border-border">
@@ -142,7 +142,7 @@ export default function Home() {
       </main>
 
       {/* ✅ Mobile Sticky Ad Bar */}
-      {/* <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border text-center py-2">
         <ins
           className="adsbygoogle"
           style={{ display: "block" }}
@@ -151,7 +151,7 @@ export default function Home() {
           data-ad-format="horizontal"
           data-full-width-responsive="true"
         />
-      </div> */}
+      </div>
     </div>
   );
 }
