@@ -4245,7 +4245,7 @@ export const categories: Category[] =
   },
   {
     "id": "fun-entertainment",
-    "title": "Fun and Entertainment",
+    "title": "Fun along with Entertainment",
     "emoji": "🎉",
     "tools": [
       {
